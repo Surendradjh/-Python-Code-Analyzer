@@ -1,8 +1,9 @@
 import google.generativeai as genai
 import streamlit as st
+import os
 st.title("🐍 Python Code Analyzer")
 
-key = 'AIzaSyC9j5KaPVcanw9nvPAfKfORBqsCzBjx37I'
+key = os.getenv("api_key")
 genai.configure(api_key=key)
 
 system_instruction = """Take the python code as input and return corrected code without any explanations. 
